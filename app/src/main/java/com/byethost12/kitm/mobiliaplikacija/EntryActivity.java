@@ -16,6 +16,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 
 import static com.byethost12.kitm.mobiliaplikacija.PokemonAdapter.ENTRY_ID;
@@ -186,11 +187,18 @@ public class EntryActivity extends AppCompatActivity {
         AlertDialog alert = builder.create();
         alert.show();
 
-//        Intent myIntent = new Intent(getApplicationContext(), SearchActivity.class);
-//        startActivityForResult(myIntent, 0);
-//        return true;
         return false;
     }
+
+    @Override
+    public void onBackPressed() {
+        // super.onBackPressed(); commented this line in order to disable back press
+        //Write your code here
+        Toast.makeText(getApplicationContext(), "WABBAAJACKA!!!", Toast.LENGTH_SHORT).show();
+    }
+
+
+
 
     private void getFields(){
         String name = etName.getText().toString();
